@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+
+
+*{
+  font-family: 'Crimson Text', serif;
+  font-size: 1.03em;
+  color: grey;
+}
+
+body{
+  background-color: hsl(0, 0%, 100%);
+}
+
+
+.card-body{
+  background-color:whitesmoke;
+  color: black;
+}
+
+body .navbar {
+  margin-bottom: 2.5em;
+}
+
+
+.card img {
+  max-height: 150px;
+}
+.card .description {
+  color: darkgrey;
+}
+
+.price {
+
+  font-weight: bold;
+  font-size-adjust: 16px;
+}
+

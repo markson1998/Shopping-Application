@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg  navbar-light   " style="background-color: rgb(190, 190, 190);"> 
+    
+    <a class="navbar-brand" href="#"></i> MW Store  &nbsp;&nbsp;</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span></span>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">     <i class="fas fa-home"></i> Home &nbsp;<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/"> Store  &nbsp; </a>
+        </li>
+        <% if (login) { %>
+          <% if (isAdmin) { %>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-user"></i>
+            &nbsp;&nbsp;  Admin dashboard 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/addProduct"> Add new product </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/ProdManagement"> Products Management  </a>
+
+ 
+            </div>
+        </div>
+        <% } %>
+        <% } %>
+      </ul>
+
+
+      <a class="nav-link" href="/shopping-card">   
+        <i class="fas fa-shopping-cart" aria-hidden="true"> </i>  &nbsp;&nbsp; Shopping card <span class="sr-only">(current)</span>
+        <% if (session.card != undefined) { %>
+        <span class="badge badge-secondary">     
+               <%= session.card.totalQty %>
+        </span>
+        <% } %>
+      </a>  
+
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+          <i class="far fa-user"></i>
+          &nbsp;&nbsp; User Management
+          </a>
+
+          <% if (login) { %>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/user/profile">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/user/logout">Log out</a>
+            </div>
+
+          <% } %>
+
+          <% if (!login) { %>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/user/signin">Sign-in</a>
+              <a class="dropdown-item" href="/user/signup">Sign-up  </a>
+            </div>
+
+          <% } %>
+
+         
+      </div>
+      <div ng-view></div>
+
+    </div>
+  </nav>

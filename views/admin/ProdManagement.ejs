@@ -1,0 +1,50 @@
+<h1>Products Management </h1>
+
+
+<% if(products){ %>
+    <div class="row">
+        <div class="col-sm-12 col-md-12  col-md-offset-3 col-sm-offset-3">
+            <ul class="list-group-item">
+                <% for(var i=0; i<products.length; i++) {%>
+                    <li class="list-group-item">
+                    <strong> <%= products[i].title %>  </strong>
+                    &nbsp;
+
+                    <span class="badge badge-success ">  <%= products[i].price %> € </span>
+                    &nbsp;
+                 
+
+                   <form class="float-right" action="/ProdManagement/<%= products[i]._id %>" method="get">
+                    <a href="/<%= products[i]._id %>"> <button class="btn btn-primary btn-sm" type="button"> Review this product </button></a>
+                    <button class="btn btn-danger btn-sm " type="submit" > Delete Product </button>
+                      </form>
+                </li>
+				<% } %>
+
+            </ul>
+        </div>
+       
+    </div>
+    
+     
+
+    <hr>
+
+
+    <% } else{ %>  
+
+<div class="row">
+    <div class="col-sm-6 col-md-6  col-md-offset-3 col-sm-offset-3">
+       <h2> Nothing here </h2>
+    </div>
+</div>   
+
+
+<% } %>
+
+<script>
+    function myFunction() {
+      confirm("delete completed");
+    }
+    </script>
+    

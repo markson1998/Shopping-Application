@@ -1,0 +1,41 @@
+<h1>Successfuly bought products! </h1>
+
+<% if(products){ %>
+    <div class="row">
+        <div class="col-sm-12 col-md-12  col-md-offset-3 col-sm-offset-3">
+            <ul class="list-group-item">
+                <% for(var i=0; i<products.length; i++) {%>
+                    <% if(products[i].qty != 0){ %>
+                    <li class="list-group-item">
+                    <strong> <%= products[i].item .title %>  </strong>
+                    &nbsp;
+                    <span class="badge badge-success">  <%= products[i].item.price %> $ </span> X <span class="badge badge-secondary" > <%= products[i].qty %> </span>
+                    &nbsp;
+
+                    
+                    <div class="btn-group" style="float: right">
+                     <a  href="/<%= products[i].item._id %>"><button class="btn btn-primary btn-sm" type="button" >Review this Product <span class="caret"></span></button></a>   
+
+                    </div>
+                </li>
+                <% } %>
+				<% } %>
+
+            </ul>
+        </div>
+    </div>
+     
+    
+    <div class="row">
+        <div class="col-sm-6 col-md-6  col-md-offset-3 col-sm-offset-3">
+            <a  href="/"><button class="btn btn-primary btn-sm" type="button" >Return to store<span class="caret"></span></button></a>
+        </div>
+        <div class="col-sm-6 col-md-6  col-md-offset-3 col-sm-offset-3">
+            <a  href="/user/profile"><button class="btn btn-primary btn-sm" type="button" >Go to Profile Page<span class="caret"></span></button></a>
+        </div>
+    </div>
+    
+    <hr>
+
+
+    <% } %>  

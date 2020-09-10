@@ -1,0 +1,25 @@
+
+
+
+
+<div class="row">
+	<% for(var i=0; i<products.length; i++) {%>
+		
+	<div class="col-sm-1 col-md-4  mt-4">
+		<div class="card" style="width: 18rem;">
+			<img src="  <%= products[i].imagePath %> " class="card-img-top " class="img-responsive" alt="<%= products[i].imagePath %>">
+				<div class="card-body">
+					<h5 class="card-title"><%= products[i].title %></h5>
+					<p class="description"><%= products[i].description %></p>
+					<div class="clearfix">
+						<div class="price float-left">  €  <%= products[i].price %>  </div>
+						<a href="/shoppingCard/<%= products[i]._id %>" class=" text-right btn btn-success float-right ">Add To Shopping Card</a>
+						
+					</div>
+					<a class="float-right" href="/reviews/<%= products[i]._id %>">See Reviews</a>
+				</div>
+			</div>
+        </div>
+
+						<% } %>
+</div>
